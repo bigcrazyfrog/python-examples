@@ -1,0 +1,5 @@
+requests
+
+# Provide types for 'requests' library
+# https://pypi.org/project/types-requests/
+types-requests

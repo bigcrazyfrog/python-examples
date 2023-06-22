@@ -1,0 +1,136 @@
+# This used just for linters and pytest config
+[tool.isort]
+profile="black"
+line_length = 79
+multi_line_output = 3
+skip = [
+  ".venv",
+  "venv",
+]
+sections = [
+  "FUTURE",
+  "STDLIB",
+  "THIRDPARTY",
+  "FIRSTPARTY",
+  "LOCALFOLDER"
+]
+include_trailing_comma = true
+default_section = "THIRDPARTY"
+
+[tool.flake8]
+# https://www.flake8rules.com/
+ignore = [
+    # https://www.flake8rules.com/rules/E126.html
+    "E126",
+    # https://www.flake8rules.com/rules/W503.html
+    "W503",
+    # https://www.flake8rules.com/rules/W504.html
+    "W504",
+    # https://github.com/m-burst/flake8-pytest-style/blob/master/docs/rules/PT004.md
+    "PT004",
+    # Missing docstring in public module
+    "D100",
+    # Missing docstring in public method
+    "D102",
+    # Missing docstring in magic method
+    "D105",
+    # Missing docstring in public nested
+    "D106",
+    # Missing docstring in __init__
+    "D107",
+    # Missing argument description in the docstring
+    "D417",
+]
+docstring-convention ="google"
+inline-quotes = "double"
+docstring-quotes = "double"
+statistics = true
+count = true
+max-complexity = 10
+pytest-fixture-no-parentheses = true
+pytest-parametrize-names-type = "list"
+pytest-parametrize-values-type = "list"
+pytest-parametrize-values-row-type = "list"
+exclude = [
+  ".venv,",
+  "venv,",
+  "__init__.py",
+]
+
+[tool.pylint."MASTER"]
+jobs = 0
+suggestion-mode = "yes"
+
+# Enable the plugins
+load-plugins = [
+    "pylint_pytest",
+    "pylint.extensions.docstyle",
+    "pylint.extensions.docparams",
+]
+
+accept-no-param-doc = "no"
+accept-no-raise-doc= "no"
+default-docstring-type = "google"
+
+ignored-modules = "invoke"
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "too-few-public-methods",
+    "missing-return-doc",
+    "missing-return-type-doc",
+    "missing-any-param-doc",
+    "missing-param-doc",
+    "missing-type-doc",
+    "missing-module-docstring",
+    "too-many-ancestors",
+    "import-outside-toplevel",
+    "unsupported-binary-operation",
+    "keyword-arg-before-vararg",
+    "logging-fstring-interpolation",
+    "fixme",
+    "unspecified-encoding",
+]
+
+[tool.pylint."FORMAT"]
+# Maximum number of characters on a single line.
+max-line-length = 79
+ignore-long-lines = "<?https?://"
+
+[tool.pylint."REPORTS"]
+score = "yes"
+# Set the output format. Available formats are text, parseable, colorized, msvs
+# (visual studio) and html
+output-format = "parseable"
+
+# Template used to display messages. This is a python new-style format string
+# used to format the message information. See doc for all details.
+msg-template = "{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}"
+
+# Tells whether to display a full report or only the messages
+reports = "n"
+ignored-argument-names = "args|kwargs"
+
+# Regular expression which should only match functions or classes name which do
+# not require a docstring
+no-docstring-rgx = "^_|__init__|Meta|__str__|unicode"
+
+[tool.mypy]
+exclude = '''(?x)(
+    test*\.py
+  )
+'''
+disallow_untyped_defs = true
+ignore_missing_imports = true
+disallow_any_generics = true
+
+[tool.pytest.ini_options]
+# --capture=no
+#   allow use of ipdb during tests
+# --ff
+#   run last failed tests first
+
+addopts = [
+  "--capture=no",
+  "--ff",
+]

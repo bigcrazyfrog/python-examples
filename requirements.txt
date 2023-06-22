@@ -1,0 +1,73 @@
+# Gitlint is a git commit message linter written in python: it checks your commit messages for style.
+# https://jorisroovers.com/gitlint/
+gitlint
+# Testing
+pytest
+# To run test in parallel
+# Docs: https://github.com/pytest-dev/pytest-xdist
+pytest-xdist
+# To prettify pytest output
+pytest-sugar
+# This plugin produces coverage reports.
+pytest-cov
+
+# Linters
+# https://pylama.readthedocs.io/en/latest/#configuration-files
+pylint
+pylint-pytest
+
+# https://flake8.pycqa.org/en/latest/
+flake8
+
+# Flake8 plug-in loading the configuration from pyproject.toml
+# https://github.com/john-hen/Flake8-pyproject
+Flake8-pyproject
+
+# A plugin for Flake8 finding likely bugs and design problems in your program.
+# https://github.com/PyCQA/flake8-bugbear
+flake8-bugbear
+
+# Extension to enforce better comma placement.
+# https://github.com/PyCQA/flake8-commas
+flake8-commas
+
+# Much stricter linter for docstrings. Check periods, empty lines, etc.
+flake8-docstrings
+
+# A flake8 plugin checking common style issues or inconsistencies with pytest-based tests.
+# https://github.com/m-burst/flake8-pytest-style
+flake8-pytest-style
+
+# Flake8 plugin for linting quotes style
+# https://github.com/zheller/flake8-quotes
+flake8-quotes
+
+# A flake8 plugin that warn about backslashes usage
+# https://github.com/wemake-services/flake8-broken-line
+flake8-broken-line
+
+# flake8 plugin to validate type annotations accoring to modern practices.
+# https://github.com/plinss/flake8-modern-annotations
+flake8-modern-annotations
+
+# McCabe complexity checker
+# https://github.com/PyCQA/mccabe
+mccabe
+
+# For proper import sorting
+# https://github.com/PyCQA/isort
+isort
+
+# Static Typing for Python
+# https://github.com/python/mypy
+mypy
+
+# Improved REPL
+# https://github.com/gotcha/ipdb
+ipdb
+# https://ipython.org/
+ipython
+
+# Include requirements files of submodules, so all requirements may be
+# installed using single command
+-r examples/health_check/requirements.txt
